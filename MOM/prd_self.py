@@ -3,13 +3,15 @@
 
 import numpy as np 
 import matplotlib.pyplot as plt
+import pandas as pd
 from scipy import stats
 
 
 #------------------------------------------------
 #function to calculate moment :
-#x = value whose moment calculate = frequency, powerspec = powerspectrum / probability distribution func
-#c = the point around which the moment is taken , as wearetaking raw moment (c=0)
+#x = value whose moment calculate = frequency, 
+#powerspec = powerspectrum / probability distribution func
+#c = the point around which the moment is taken , as we are taking raw moment (c=0)
 #n = order of moment/power of (x-c)**n
 
 
@@ -31,7 +33,7 @@ def powSpecmoment(freq, powSpec):
         freq_arr = freq[maxpowindx-32:maxpowindx+32]  #arrary containing 32 point +- maximum index 
         pow_spec = powSpec[maxpowindx-32:maxpowindx+32]    
 
-#Now,do noise floor level (L) estimation and substracting it from total noisy signal power(pow_spec) to find, noiseless signal power - Using method mentioned in Hildebrand et.
+#Now,do noise floor level (L) estimation and substracting it from total noisy signal power(pow_spec) to find, noiseless signal power - Using method mentioned in Hildebrand et. al
    
     sortpsd = np.sort(pow_spec)  #sort array in ascending order, calculate mean and variance of grps of element, if R=(var/mean)<1 , take it as noiselevel 
 
@@ -50,12 +52,13 @@ def powSpecmoment(freq, powSpec):
 
     noise = noiselevelL/Lindx #noise power
     unpow = pow_spec - noise # noiseless signal power - substract noiselevel from spectrum 
-
-#now find index of peak value'l' in spectrum , find 'm'-minimum indx of positive point, and 'n'- maximum indx of positive point, corrosponding to valley point of detected peak doppler spectrum
-    lindx = np.argmax(unpow)  #indx of peak value
-    #diving spectrum in two parts
-    fhpower = unpow[0:lindx]#first half-power spectrum, usually lindx=32
-    shpower = unpow[lindx:] #second half-power spectrum
+    '''
+	Now find index of peak value'l' in spectrum , find 'm'-minimum indx of positive point, and 'n'- maximum indx of positive point, corrosponding to valley point of detected peak doppler spectrum
+	'''
+    lindx = np.argmax(unpow)  					#indx of peak value
+    #dividing spectrum in two parts
+    fhpower = unpow[0:lindx]					#first half-power spectrum, usually lindx=32
+    shpower = unpow[lindx:] 					#second half-power spectrum
     #now in this half spectrum, find 'm'(minimum indx of positive points,near bottom ofpeak) 
     #for 'm' in first-half spectrum, 'm'= minimum indx of positive points = maximum indx of negative points
     fhIndxes = np.where(fhpower<0)
@@ -72,10 +75,10 @@ def powSpecmoment(freq, powSpec):
 
     #zeroth moment =  total power = sum(powerspec)
     zeroth_moment = np.sum(moPower)
-    #frist moment = doppler freq shift = np.sum(powerspec*(freq)) / np.sum(powerspec) 
+    #first moment = doppler freq shift = np.sum(powerspec*(freq)) / np.sum(powerspec) 
     first_moment = np.sum(moPower*(moFreq)) / np.sum(moPower)
-
-    return [zeroth_moment,first_moment] 
+    second_moment = np.sum(((moFreq-first_moment)**2)*moPower) / np.sum(moPower)
+    return [zeroth_moment,first_moment,second_moment] 
 
 #---------------------------------
 
@@ -220,22 +223,30 @@ Use `array.size > 0` to check that an array is not empty.
 
         powSpec= (fftAA1_abs)**2 #power spectral density = square of amplitude of fft 
     
-        #Finding Moments of powSpec (Power spectral density distribution)- by defining "powSpecmoment" function - zeroth moment = power, first moment = doppler freq, second = width of freq spread 
-        momentout = powSpecmoment(freq, powSpec) #powSpecmoment(frequency, powSpec)
-        power_total = momentout[0] #zeroth moment 
-        dopp_firstmoment = momentout[1]  #first moment 
-
-	#final experimental/Observed doppler shift observed in received signal is (given by heterodyning principle)  
-	#exp_dopp = Downconversion frequency + dopp_firstmoment_freq - transmitted freq
-        #IV - write output in "output.txt" file containging :  time in seconds----power(first moment)-----measured dopp freq
+        '''
+        Finding Moments of powSpec (Power spectral density distribution)- by defining "powSpecmoment" function - 
+        zeroth moment = power, 
+        first moment = doppler freq, 
+        second = width of freq spread
+        '''
+        momentout = powSpecmoment(freq, powSpec) 		#powSpecmoment(frequency, powSpec)
+        power_total = momentout[0] 				#zeroth moment 
+        dopp_firstmoment = momentout[1]  			#first moment
+        second_moment = momentout[2]                            #second moment
+        '''
+	final experimental/Observed doppler shift observed in received signal is (given by heterodyning principle)  
+	Observed Doppler = Down conversion Frequency + FFT value (Doppler) – Transmitted frequency 
+	exp_dopp = Downconversion frequency + dopp_firstmoment_freq - transmitted freq
+        IV - write output in "output.txt" file containging :  time in seconds----power(first moment)-----measured dopp freq
+        '''
 
         exp_dopp =  downconfreq + dopp_firstmoment - tfreq 
         timesec = tt_sec[0]+j*interval   #time in sec 6300.1, 6300.2
         
-        foutput = open("output_expdopp_4point.csv", "a+")
-        foutput.writelines(str(i)+','+str(timesec)+','+str(power_total)+','+ str(downconfreq) +','+ str(dopp_firstmoment) + ','+ str(exp_dopp) + '\n')
-	
-        #change start and end to move for next window 
+        foutput = open("output_expdopp_4point.txt", "a+")
+        foutput.writelines(str(i)+','+str(timesec)+','+str(power_total)+','+ str(downconfreq) +','+ str(dopp_firstmoment) + ','+ str(exp_dopp) + ','+str(second_moment) + '\n')  # 
+        url = '/home/dev/Sun/output_expdopp_4point.txt'
+        dataset = pd.read_csv(url)
         start = end
         end = start+windwsize
 
