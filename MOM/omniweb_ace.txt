@@ -4319,6 +4319,3 @@ YYYY DOY HR MN      V
 2021 288 23 45   329.7
 2021 288 23 50   331.0
 2021 288 23 55   329.2
-If you have any questions about OMNIWeb Plus Interface,contact:
-Dr. Natalia Papitashvili, Code 672, Greenbelt, MD 20771.
-Last Update: October 03, 2022, NEP.
