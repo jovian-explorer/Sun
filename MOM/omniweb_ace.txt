@@ -1,8 +1,4 @@
-#OMNIWeb Plus Browser Results.
-#Listing for omni_5min data from 20211001 to 20211015
-#Selected parameters:
-# 1 Speed, km/s
-YYYY DOY HR MN      1 
+YYYY DOY HR MN      V 
 2021 274  0  0   540.7
 2021 274  0  5   544.7
 2021 274  0 10   537.5
