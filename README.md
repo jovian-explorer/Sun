@@ -29,4 +29,5 @@ From the sun's surface on out, the wavelengths SDO observes, measured in angstro
 
  - 131: The hottest material in a flare.
 
-https://svs.gsfc.nasa.gov/vis/a010000/a011000/a011071/Sun_Wavelength_Chart_4k-FINAL.jpg
+
+<img width="55%" align="center" alt="Github" src="https://svs.gsfc.nasa.gov/vis/a010000/a011000/a011071/Sun_Wavelength_Chart_4k-FINAL.jpg" />
