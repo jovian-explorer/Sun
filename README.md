@@ -31,3 +31,5 @@ From the sun's surface on out, the wavelengths SDO observes, measured in angstro
 
 
 <img width="100%" align="center" alt="Github" src="https://github.com/jovian-explorer/Sun/blob/main/SDO.jpg" />
+
+[![DOI](https://zenodo.org/badge/517340475.svg)](https://zenodo.org/badge/latestdoi/517340475)
