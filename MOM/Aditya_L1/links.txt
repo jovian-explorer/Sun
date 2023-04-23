@@ -1,0 +1,12 @@
+JSOC Data Export Request Generation
+All data-product generation and availability have been fully restored after JSOC power interuption in June 21. Please let us know of some needed files are missing for 21 to 26 June.
+
+When downloading exports, please do not use P2P file-sharing or any other method that provides many simultaneous connections; we allow downloads from one host over a single connection. Increase the size of the export payload to avoid making many small requests.
+
+http://jsoc.stanford.edu/ajax/exportdata.html
+
+https://student.helioviewer.org/
+
+https://sdo.gsfc.nasa.gov/data/aiahmi/
+
+https://cdaw.gsfc.nasa.gov/CME_list/
