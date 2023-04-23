@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns="zds.openloop.cfg" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="zds.openloop.cfg zds_olr.xsd">
+   <general>
+      <missionLabel>AKT1</missionLabel>
+      <agencyFlag>0</agencyFlag>
+      <rxStationID>1</rxStationID>
+      <rxStationLabel>DS95</rxStationLabel>
+      <receiverID>R1</receiverID>
+   </general>
+   <recorder>
+      <IFChannel IFChan="1">
+         <enable>false</enable>
+         <inputFreq>70000000</inputFreq>
+         <filterBW>5MHz</filterBW>
+         <sampleResolution>16</sampleResolution>
+         <port>Nominal</port>
+         <downConvFreq>8410640000</downConvFreq>
+      </IFChannel>
+      <IFChannel IFChan="2">
+         <enable>true</enable>
+         <inputFreq>70000000</inputFreq>
+         <filterBW>5MHz</filterBW>
+         <sampleResolution>16</sampleResolution>
+         <port>Nominal</port>
+         <downConvFreq>8410640000</downConvFreq>
+      </IFChannel>
+      <IFChannel IFChan="3">
+         <enable>false</enable>
+         <inputFreq>70000000</inputFreq>
+         <filterBW>5MHz</filterBW>
+         <sampleResolution>16</sampleResolution>
+         <port>Nominal</port>
+         <downConvFreq>8410640000</downConvFreq>
+      </IFChannel>
+   </recorder>
+   <ddorProcess simulationDelay="0">
+      <spacecraft>
+         <samplingRate>200</samplingRate>
+         <sampleQuantization>8</sampleQuantization>
+         <gain>5</gain>
+      </spacecraft>
+      <quasar>
+         <samplingRate>4000</samplingRate>
+         <sampleQuantization>2</sampleQuantization>
+         <gain>4</gain>
+      </quasar>
+      <channels>
+         <channel channelID="1">
+            <enable>true</enable>
+            <linkIFChannel>2</linkIFChannel>
+            <offsetFreqHz>0</offsetFreqHz>
+            <offsetFreqMicroHz>0</offsetFreqMicroHz>
+            <harmonic>0</harmonic>
+            <cohFlag>true</cohFlag>
+            <dorMultNum>1</dorMultNum>
+            <dorMultDen>589</dorMultDen>
+            <fSub>0</fSub>
+         </channel>
+      </channels>
+   </ddorProcess>
+   <ddorSession startDate="2017-07-31T06:01:50" stopDate="2017-07-31T06:53:10">
+      <scan scanId="1" startDate="2017-07-31T06:02:00" stopDate="2017-07-31T06:52:50">
+         <sourceType>S</sourceType>
+         <sourceLabel>AKT1</sourceLabel>
+         <sourceID>1</sourceID>
+         <tFreq>8410640000</tFreq>
+         <raCoordinate>0</raCoordinate>
+         <decCoordinate>0</decCoordinate>
+      </scan>
+   </ddorSession>
+</configuration>
