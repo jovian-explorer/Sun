@@ -1,0 +1,6 @@
+requests==2.27.1
+beautifulsoup4==4.11.2
+pandas==1.5.3
+DateTime
+ipython==7.34.0
+tqdm==4.65.0
