@@ -5,7 +5,7 @@ In 1965, the Mariner IV spacecraft used radio occultation to measure the atmosph
 The velocity for the stipulated distance and time period is obtained in the range of 112-260 Km/s.
 We also present a comparison with the different electron number density models derived in the previous studies with the profiles derived from our study by using data collected during the Indian Mars Orbiter Mission in October 2021, received at the Indian Deep Space Network, Bangalore.   
 
-<p><br></p> <img width="50%" align="center" alt="Github" src="https://github.com/jovian-explorer/Sun/blob/main/MOM/Pictures/9.png" /> <p><br></p> 
+<p><br></p> <img width="100%" align="center" alt="Github" src="https://github.com/jovian-explorer/Sun/blob/main/MOM/Pictures/9.png" /> <p><br></p> 
 
 ### Table of contents
 
