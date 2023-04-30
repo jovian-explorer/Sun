@@ -5,6 +5,7 @@ In 1965, the Mariner IV spacecraft used radio occultation to measure the atmosph
 The velocity for the stipulated distance and time period is obtained in the range of 112-260 Km/s.
 We also present a comparison with the different electron number density models derived in the previous studies with the profiles derived from our study by using data collected during the Indian Mars Orbiter Mission in October 2021, received at the Indian Deep Space Network, Bangalore.   
 
+<p><br></p> <img width="50%" align="center" alt="Github" src="https://github.com/jovian-explorer/Sun/blob/main/MOM/Pictures/9.png" /> <p><br></p> 
 
 ### Table of contents
 
@@ -43,3 +44,5 @@ We also present a comparison with the different electron number density models d
       TSDs, on the other hand, are fast and short-lived disturbances in the solar wind, caused by explosive events on the Sun such as solar flares and coronal mass ejections (CMEs). These events can cause sudden changes in the solar wind’s speed, density, and magnetic field, which can in turn lead to geomagnetic storms and other space weather effects. Both CSDs and TSDs can have significant impacts on the Earth’s space environment and technological infrastructure, including communication systems and power grids. Studying these disturbances is an important area of research for understanding the behavior of the Sun and its effects on the Earth.
 
   * [Other_docs](https://github.com/jovian-explorer/Sun/tree/main/MOM/other%20docs) - Contains miscellaneous files involved in the project.
+  
+  * [Pictures](https://github.com/jovian-explorer/Sun/tree/main/MOM/Pictures) - Contains the plots/figures.
