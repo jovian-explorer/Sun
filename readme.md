@@ -17,7 +17,25 @@ We also present a comparison with the different electron number density models d
   * [Books](https://github.com/jovian-explorer/Sun/tree/main/MOM/Books) - This contains some of the books I used while working on my thesis project. Others I could not upload due to the size constraints, but contact me, and I'll share them with you. If possible, buy/loan the books using the proper channels.
   
   * [Code](https://github.com/jovian-explorer/Sun/tree/main/MOM/Code) - This is the heart of everythin I did in my thesis year. It contains all the codes to generate all the figures and results I have mentioned in my thesis, as well as in the currently under preparation paper.
-  
+
+    * [50yearplot](https://github.com/jovian-explorer/Sun/tree/main/MOM/Code/50yearplot) - Contains the data and code to plot the comparison of measurements of Solar wind from 1971 to 2022.
+
+    * [ACE_SWASTI](https://github.com/jovian-explorer/Sun/tree/main/MOM/Code/ACE_SWASTI) - Code to plot the results obtained from the SWASTI- solar wind framework to compare our findings.
+
+    * [MOM_OCCULTATION_DATA](https://github.com/jovian-explorer/Sun/tree/main/MOM/Code/MOM_OCCULTATION_DATA) - Data obtained from the Mars Orbiter Mission, which is used in this study.
+
+    * [OMNI](https://github.com/jovian-explorer/Sun/tree/main/MOM/Code/OMNI) - Data from OMNI satellite (NASA) for the period of the occultation event.
+
+    * [PSP](https://github.com/jovian-explorer/Sun/tree/main/MOM/Code/PSP) - Data from the Parker Solar Orbiter, including its positioning, as well as other data.
+
+    * [help](https://github.com/jovian-explorer/Sun/tree/main/MOM/Code/help)
+
+    * [main-code](https://github.com/jovian-explorer/Sun/tree/main/MOM/Code/main-code) - Folder with the main code used for obtaining the results given in my thesis, as well as the paper draft in progress.
+
+    * [model-equations](https://github.com/jovian-explorer/Sun/tree/main/MOM/Code/model-equations) - Model equations used for comparisonss between the different plasma frequency models.
+
+    * [position-modelling](https://github.com/jovian-explorer/Sun/tree/main/MOM/Code/position-modelling) - Code for modelling the position of the spacecrafts involved in this study, as well as the planets in the Solar system.
+
   * [ENLIL](https://github.com/jovian-explorer/Sun/tree/main/MOM/ENLIL) - The numerical code ENLIL (Sumerian god of wind and storms) is a research tool for simulations of corotating and transient solar wind disturbances. The physical model is based upon the ideal magnetohydrodynamic (MHD) description and the numerical scheme is an explicit high-resolution TVD Lax-Friedrichs scheme. Corotating Solar Wind Disturbances (CSDs) and Transient Solar Wind Disturbances (TSDs) are two types of disturbances that occur in the solar wind, the stream of charged particles flowing from the Sun.
   
       CSDs are a slow and relatively long-lasting disturbance in the solar wind, caused by the rotation of the Sun. The solar wind plasma rotates with the Sun, which produces a spiral pattern of alternating high- and low-speed streams of particles. These streams can cause variations in the Earth’s magnetic field and can lead to geomagnetic storms and auroral displays.
